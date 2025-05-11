@@ -20,7 +20,17 @@ fs = GridFS(db)
 
 @app.route("/")
 def home():
-    return jsonify({"mensaje": "Bienvenido a MusicStream"})
+    html = """
+    <!doctype html>
+    <title>MusicStream - Inicio</title>
+    <h1>Bienvenido a MusicStream</h1>
+    <ul>
+        <li><a href="/subir">Subir nueva canción</a></li>
+        <li><a href="/canciones">Ver canciones disponibles</a></li>
+        <li><a href="/pingdb">Probar conexión a MongoDB</a></li>
+    </ul>
+    """
+    return render_template_string(html)
 
 
 # Probar la conexión a la db
