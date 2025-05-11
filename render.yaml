@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: musicstream
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb+srv://jadasme:Jc_globalsym2017@miritech.656jnim.mongodb.net/?retryWrites=true&w=majority&appName=MiriTech
